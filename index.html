@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="de">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="pr0gramm.min.css">
+<link rel="stylesheet" href="vs2015.css">
+<style>
+	/* Specific styles for this website */
+	body { width: 800px; margin: 0 auto; }
+
+	article { padding: 10px 0; }
+	article:first-of-type > h1 { text-align: center; font-size: 48px; margin-bottom: 10px; margin-top: 20px; }
+	article:first-of-type > h1 + div { text-align: center; color: #666; }
+	p { margin: 0 0 20px 0; }
+
+	footer {
+		color: #888;
+		background-color: #0a0a0b;
+		height: 56px;
+		line-height: 56px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.sample {
+		margin-bottom: 20px;
+		padding: 20px;
+		background-color: #0a0a0b;
+	}
+	code { white-space: pre; -moz-tab-size: 4; tab-size: 4; margin: 16px; }
+	details > code { margin-left: 0; margin-right: 0; }
+	.sample > label { display: block; } /* don't do this! I'm just too lazy for proper list styling below */
+
+	/* Site-specific use of navbar. */
+	.navbar > div {
+		width: 800px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+	.brand { font-weight: bold; text-transform: uppercase; }
+	.navbar > div > *:nth-last-child(2) { flex-grow: 1; }
+
+	.blur-demo {
+		display: grid;
+		grid-template-columns: repeat(10, 128px);
+		grid-gap: 1px;
+		justify-content: center;
+		align-content: start;
+	}
+	.blur-demo img { width: 128px; height: 128px; background-color: #0a0a0b; }
+	.user-mark-demo {
+		display: grid;
+		grid-template-rows: repeat(4, auto);
+		grid-gap: 0px 16px;
+		justify-content: center;
+		grid-auto-flow: column;
+	}
+</style>
+<title>pr0gramm.css</title>
+
+<!-- Beispiel für eine gefixte Navbar. Muss nicht fixed sein. -->
+<nav class="navbar fixed">
+
+	<!--
+		Diesen div benötigst du in Deiner Seite nicht.
+		Er wird hier nur verwendet, um das Innere der Navbar auf dieselbe horizontale Höhe wie den Inhalt zu bringen.
+		(siehe ".navbar > div" oben )
+	 -->
+	<div>
+		<a href="https://holzmaster.github.io/pr0gramm.css" class="brand nav-link active">pr0gramm.css</a>
+		<a href="//github.com/holzmaster/pr0gramm.css" class="nav-link">auf GitHub</a>
+		<span></span>
+		<a href="//pr0gramm.com/inbox/messages/holzmaster" class="nav-link">Kontakt</a>
+	</div>
+</nav>
+
+<!--
+	Die Navbar hat eine Standardhöhe. Wenn sie fixed ist, muss das Folgeelement verschoben werden.
+	Um das zu tun, einfach die Klasse "adjust-for-fixed-navbar" setzen.
+-->
+<main class="adjust-for-fixed-navbar">
+	<article>
+		<h1>pr0gramm.css</h1>
+		<div>
+			Ein Stylesheet für pr0gramm-esque Seiten.
+			<p>Hat bis auf das Aussehen nichts mit dem pr0gramm.min.css zu tun, das auf pr0gramm verwendet wird.
+		</div>
+
+		<p>Zuerst ein paar Schmuser.</p>
+
+		<!-- Die Schmuser sind nur dafür da, um den Blur-Effekt der Navbar zu demonstrieren. -->
+		<div class="blur-demo">
+			<img src="http://placekitten.com/128/128?image=1" alt="">
+			<img src="http://placekitten.com/128/128?image=2" alt="">
+			<img src="http://placekitten.com/128/128?image=3" alt="">
+			<img src="http://placekitten.com/128/128?image=4" alt="">
+			<img src="http://placekitten.com/128/128?image=5" alt="">
+			<img src="http://placekitten.com/128/128?image=6" alt="">
+			<img src="http://placekitten.com/128/128?image=7" alt="">
+			<img src="http://placekitten.com/128/128?image=8" alt="">
+			<img src="http://placekitten.com/128/128?image=9" alt="">
+			<img src="http://placekitten.com/128/128?image=10" alt="">
+			<img src="http://placekitten.com/128/128?image=11" alt="">
+			<img src="http://placekitten.com/128/128?image=12" alt="">
+			<img src="http://placekitten.com/128/128?image=13" alt="">
+			<img src="http://placekitten.com/128/128?image=14" alt="">
+			<img src="http://placekitten.com/128/128?image=15" alt="">
+			<img src="http://placekitten.com/128/128?image=16" alt="">
+			<img src="http://placekitten.com/128/128?image=4" alt="">
+			<img src="http://placekitten.com/128/128?image=1" alt="">
+			<img src="http://placekitten.com/128/128?image=12" alt="">
+			<img src="http://placekitten.com/128/128?image=3" alt="">
+		</div>
+	</article>
+
+	<article>
+		<h1>Verwendung / Installation</h1>
+
+		<code>npm install pr0gramm.css
+<span class="hljs-comment"># CSS liegt in node_modules/pr0gramm.css/pr0gramm.min.css</span>
+<span class="hljs-comment"># import "pr0gramm.css"; // bei einem CSS-in-JS-Bundler (z. B. create-react-app)</span></code>
+		<span class="separator">oder</span>
+		<code><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//unpkg.com/pr0gramm.css@^1/pr0gramm.min.css"</span>&gt;</span></code>
+	</article>
+	<hr>
+	<article>
+		<h1>Standard-Styles für Controls</h1>
+
+		<div class="sample" id="controls">
+			<textarea placeholder="Kommentar schreiben…"></textarea>
+			<br>
+			<button>Ein Button</button>
+			<button class="secondary">Abbrechen</button>
+			<button disabled>Deaktiviert</button>
+			<br>
+			<br>
+			<input type="text" placeholder="Eine tolle Textbox">
+			<br>
+			<br>
+			<div>
+				<label>
+					<input type="radio" name="some-readio-button" value="0">
+					<span>Tolle</span>
+				</label>
+				<label>
+					<input type="radio" name="some-readio-button" value="1" checked>
+					<span>Radio-Buttons</span>
+				</label>
+			</div>
+			<br>
+			Hier ist noch ein Range-Slider:
+			<br>
+			<input type="range">
+			<br>
+			<details>
+				<summary>Hier klicken zum Ausklappen</summary>
+				<div>Wer das liest ist doof. Hihi</div>
+			</details>
+			<button class="large">Krass abspeichern</button>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Kommentar schreiben…"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Eine tolle Textbox"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Ein Button<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"secondary"</span>&gt;</span>Abbrechen<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">disabled</span>&gt;</span>Deaktiviert<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"some-readio-button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span>&gt;</span>
+		<span class="hljs-comment">&lt;!--
+			Ja, der span ist nötig. Dafür brauchst du kein for=""
+			...und musst keine ID vergeben.
+		--&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Tolle<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"some-readio-button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">checked</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Radio-Buttons<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Range-Slider: --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- details / summary --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Hier klicken zum Ausklappen<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Wer das liest ist doof. Hihi<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"large"</span>&gt;</span>Krass abspeichern<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Links</h1>
+
+		<div class="sample">
+			<a href="#">Ein Link</a>,
+			<a href="#" class="action">eine Aktion</a>,
+			<a href="#" class="action serious">mit Klammern</a>,
+			ein <a href="#" class="nav-link"> Navigationslink</a> und
+			ein <a href="#" class="nav-link active">aktiver Navigationslink</a>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Ein Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>,
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"action"</span>&gt;</span>eine Aktion<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>,
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"action serious"</span>&gt;</span>mit Klammern<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>,
+ein <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span> Navigationslink<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> und
+ein <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link active"</span>&gt;</span>aktiver Navigationslink<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Nutzerränge</h1>
+
+		<div class="sample">
+			<div class="user-mark-demo">
+				<span class="user" data-mark="0">EinUser</span>
+				<span class="user" data-mark="1">IchBinNeuHier</span>
+				<span class="user" data-mark="2">Benutzer</span>
+				<span class="user" data-mark="3">cha0s</span>
+				<span class="user" data-mark="4">Blauschwuchtel</span>
+				<span class="user" data-mark="5">froschler</span>
+				<span class="user" data-mark="6">Marina</span>
+				<span class="user" data-mark="7">Keith</span>
+				<span class="user" data-mark="8">Wichtel</span>
+				<span class="user" data-mark="9">EdlerSpender</span>
+				<span class="user" data-mark="10">KeineAltschwuchtel</span>
+				<span class="user" data-mark="11">Seglormeister</span>
+				<span class="user" data-mark="12">RundesBalli</span>
+				<span class="user" data-mark="13">NutzerBot</span>
+				<span class="user" data-mark="14">SystemBot</span>
+			</div>
+
+			<p>Mit OP-Tag:<br>
+			<span class="user op" data-mark="2">holzmaster</span>
+			<p>Als Link: <a class="user" data-mark="3" href="//pr0gramm.com/user/Gamb">Gamb</a>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"0"</span>&gt;</span>EinUser<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"1"</span>&gt;</span>IchBinNeuHier<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"2"</span>&gt;</span>Benutzer<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"3"</span>&gt;</span>cha0s<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"4"</span>&gt;</span>Blauschwuchtel<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"5"</span>&gt;</span>froschler<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"6"</span>&gt;</span>Marina<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"7"</span>&gt;</span>Keith<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"8"</span>&gt;</span>Wichtel<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"9"</span>&gt;</span>EdlerSpender<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"10"</span>&gt;</span>KeineAltschwuchtel<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"11"</span>&gt;</span>Seglormeister<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"12"</span>&gt;</span>RundesBalli<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"13"</span>&gt;</span>NutzerBot<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"14"</span>&gt;</span>SystemBot<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- alternativ kann auch die "pr0gramm-Notation" verwendet werden: --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user um3"</span>&gt;</span>cha0s<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Mit OP-Tag: --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user op"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"2"</span>&gt;</span>holzmaster<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- Als Link: --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">data-mark</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//pr0gramm.com/user/Gamb"</span>&gt;</span>Gamb<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Tags</h1>
+
+		<div class="sample">
+			<span class="tag">gute nudel</span>
+			<span class="tag">Falsche Zielgruppe</span>
+			<span class="tag">
+				auch mit votes
+				<a href="#" class="vote-up">+</a>
+				<a href="#" class="vote-down">-</a>
+			</span>
+			<a href="#" class="tag">und mit Verlinkung</a>
+			<span class="tag">
+				<a href="#">mit votes und Verlinkung</a>
+				<a href="#" class="vote-up">+</a>
+				<a href="#" class="vote-down">-</a>
+			</span>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag"</span>&gt;</span>gute nudel<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag"</span>&gt;</span>Falsche Zielgruppe<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag"</span>&gt;</span>
+	auch mit votes
+	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote-up"</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote-down"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag"</span>&gt;</span>und mit Verlinkung<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tag"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>mit votes und Verlinkung<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote-up"</span>&gt;</span>+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote-down"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Navbar</h1>
+
+		<div class="sample">
+			<h3>Siehe diese Seite</h3>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><kbd>Strg+U</kbd></code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h2>Farbschema Ändern</h2>
+		<div class="sample">
+			<label>
+				<input type="radio" name="theme" value="0" checked>
+				<!-- Ja, der span ist nötig. Dafür brauchst du kein for="" -->
+				<span>bewährtes Orange</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="1">
+				<span>angenehmes Grün</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="2">
+				<span>Olivgrün des Friedens</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="3">
+				<span>episches Blau</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="4">
+				<span>altes Pink</span>
+			</label>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><span class="hljs-comment">/*
+* 0: bewährtes Orange
+* 1: angenehmes Grün
+* 2: Olivgrün des Friedens
+* 3: episches Blau
+* 4: altes Pink
+*/</span>
+<span class="hljs-selector-pseudo">:root</span> {
+	<span class="hljs-attribute">--primary-color</span>: <span class="hljs-built_in">var</span>(--theme-color-primary-0);
+	<span class="hljs-attribute">--secondary-color</span>: <span class="hljs-built_in">var</span>(--theme-color-secondary-0);
+}</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Separator</h1>
+
+		<div class="sample">
+			Das hier ist ein ganz toller Text. Vielleicht gibt es hier sogar Controls. Wer weiß!
+			<span class="separator">oder</span>
+			Vielleicht möchtest du ja auch das tun, was unter diesem tollen "oder"-Teiler steht.
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>Inhalt über dem Teiler
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"separator"</span>&gt;</span>oder<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+Inhalt unter dem Teiler</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Plus/Minus</h1>
+
+		<div class="sample">
+			<p>
+				Statische plus/minus:<br>
+				<i class="vote plus"></i>
+				<i class="vote minus"></i>
+			<p>
+				Interaktiv (mit hover):<br>
+				<i class="vote plus interactive"></i>
+				<i class="vote minus interactive"></i>
+			<p>
+				Mit a- oder button-Tag und anderer Größe:<br>
+				<a class="vote plus interactive" href="#gib-blussi" style="width: 50px; height: 50px;"></a>
+				<button class="vote minus interactive" style="width: 50px; height: 50px;"></button>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><span class="hljs-comment">&lt;!-- Statische plus/minus --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote plus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote minus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Interaktiv (mit hover) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote plus interactive"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote minus interactive"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Als a- oder button-Tag: --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote plus interactive"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#gib-blussi"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 50px; height: 50px;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"vote minus interactive"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 50px; height: 50px;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-comment">&lt;!--
+	Du solltest bei Dir natürlich die Größe ordentlich setzen.
+	"width" und "height" müssen immer gleich sein,
+	sonst kommt es zu merkwürdigen Effekten.
+--&gt;</span></code>
+		</details>
+	</article>
+
+	<article>
+		<h1>CSS-Variablen</h1>
+		<p>
+			Die aktuelle Primärfarbe (<span style="color: var(--primary-color)">diese hier</span>)
+			und die Linkfarbe (<span style="color: var(--secondary-color)">diese hier</span>)
+			sind über CSS-Variablen verfügbar.
+			Dies gilt auch für das richtige Grau und die passenden Schriftarten.
+
+		<code><span class="hljs-selector-class">.rule</span> {
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--primary-color); <span class="hljs-comment">/* Primärarbe des aktuellen Themes */</span>
+<span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--secondary-color); <span class="hljs-comment">/* Linkfarbe */</span>
+<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--pr0gramm-background-color); <span class="hljs-comment">/* richtiges Grau */</span>
+<span class="hljs-attribute">font-family</span>: <span class="hljs-built_in">var</span>(--pr0gramm-font-family); <span class="hljs-comment">/* passende Schriftart */</span></code>
+
+		<div class="sample">
+			<p>
+				Statische plus/minus:<br>
+				<i class="vote plus"></i>
+				<i class="vote minus"></i>
+			<p>
+				Interaktiv (mit hover):<br>
+				<i class="vote plus interactive"></i>
+				<i class="vote minus interactive"></i>
+			<p>
+				Mit a- oder button-Tag und anderer Größe:<br>
+				<a class="vote plus interactive" href="#gib-blussi" style="width: 50px; height: 50px;"></a>
+				<button class="vote minus interactive" style="width: 50px; height: 50px;"></button>
+		</div>
+	</article>
+
+</main>
+
+<footer>Gemacht mit viel <span style="color: red;">❤</span></footer>
+
+<script>
+	const root = document.documentElement;
+
+	const themeSelectors = document.querySelectorAll("input[type='radio'][name='theme']");
+	for (const r of themeSelectors)
+		r.addEventListener("change", (e) => setTheme(e.target.value));
+
+	function setTheme(themeId) {
+		root.style.setProperty("--primary-color", `var(--theme-color-primary-${themeId})`);
+		root.style.setProperty("--secondary-color", `var(--theme-color-secondary-${themeId})`);
+	}
+</script>
