@@ -1,0 +1,39 @@
+$navbar-height: 52px;
+$backdrop-blur: 30px;
+$backdrop-color: rgba(0, 0, 0, 0.5);
+$nav-shadow-color: $backdrop-color;
+
+.navbar {
+	height: $navbar-height;
+	z-index: 100;
+
+	&.fixed {
+		margin: 0 auto;
+		position: fixed;
+		top: 0;
+		left: 0px;
+		right: 0px;
+	}
+
+	padding: 0 16px;
+
+	& .brand {
+		margin-right: 16px;
+	}
+}
+
+@supports(backdrop-filter: blur()) {
+	.navbar {
+		background-color: $backdrop-color;
+		backdrop-filter: blur($backdrop-blur);
+	}
+}
+@media only screen and (min-width: 600px) {
+	.navbar {
+		box-shadow: $nav-shadow-color 0px 20px 20px -10px;
+	}
+}
+
+.adjust-for-fixed-navbar {
+	margin-top: $navbar-height;
+}

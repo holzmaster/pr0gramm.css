@@ -1,0 +1,54 @@
+@mixin user-dot {
+	content: "\25CF";
+	margin-left: 0.4em;
+}
+
+.user {
+	&.op {
+
+		&::before {
+			content: "OP";
+
+			background-color: var(--primary-color);
+
+			padding: 0px 6px;
+			margin-right: 4px;
+
+			vertical-align: baseline;
+			text-align: center;
+			font-weight: bold;
+			border-radius: 0.25em;
+		}
+	}
+
+	// Setting the mark via data attribue
+	&[data-mark] {
+		color: $input-focused-color;
+
+		&::after { @include user-dot; }
+
+		@each $mark, $color in $marks {
+			&[data-mark="#{$mark}"]::after {
+				color: $color;
+				@if map-has-key($special-shapes, $mark) {
+					content: map-get($special-shapes, $mark);
+				}
+			}
+		}
+	}
+
+	// Alternative mark, the way pr0gramm does it
+	&[class*="um"] {
+		color: $input-focused-color;
+		&[class*="um"]::after { @include user-dot; }
+	}
+
+	@each $mark, $color in $marks {
+		&.um#{$mark}::after {
+			color: $color;
+			@if map-has-key($special-shapes, $mark) {
+				content: map-get($special-shapes, $mark);
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+a {
+	color: var(--secondary-color);
+
+	text-decoration: none;
+
+	&.action {
+		color: var(--primary-color);
+		// Font size should be set by the outer container
+		// font-size: 12px;
+
+		&.serious {
+			&::before {
+				content: "[";
+				color: $placeholder-color;
+			}
+			&::after {
+				content: "]";
+				color: $placeholder-color;
+			}
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: $input-focused-color;
+	}
+
+	&.nav-link {
+		color: #fff;
+
+		&:hover, &.active {
+			color: var(--primary-color);
+		}
+	}
+
+	&.user:hover, &.user.active {
+		color: var(--secondary-color);
+	}
+}

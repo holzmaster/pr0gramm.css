@@ -1,0 +1,33 @@
+{
+  "name": "pr0gramm.css",
+  "version": "1.0.0",
+  "author": "holzmaster",
+  "description": "Ein Stylesheet für pr0gramm-esque Seiten.",
+  "license": "ISC",
+  "main": "pr0gramm.min.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holzmaster/pr0gramm.css"
+  },
+  "scripts": {
+    "watch": "mkdirp build && sass --watch src/pr0gramm.scss:build/pr0gramm.css",
+    "clean": "mkdirp build && rimraf build/*",
+    "compile": "mkdirp build && sass src/pr0gramm.scss:build/pr0gramm.css",
+    "compile:prod": "mkdirp build && npm run compile:plain && npm run compile:compressed",
+    "compile:plain": "sass --no-source-map src/pr0gramm.scss:build/pr0gramm.css",
+    "compile:compressed": "sass --no-source-map --style compressed src/pr0gramm.scss:build/pr0gramm.min.css",
+    "build-docs": "node build-docs.js",
+    "prepublishOnly": "npm run compile:prod && mv build/pr0gramm*.css ."
+  },
+  "keywords": [
+    "pr0gramm",
+    "css"
+  ],
+  "devDependencies": {
+    "highlightjs": "^9.16.2",
+    "mkdirp": "^1.0.4",
+    "outdent": "^0.7.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.5"
+  }
+}

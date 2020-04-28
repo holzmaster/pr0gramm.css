@@ -1,0 +1,17 @@
+// Mostly taken from: https://stackoverflow.com/a/26634224
+.separator {
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	&::before, &::after {
+		content: "";
+		flex: 1;
+		border-bottom: 1px solid $divider-color;
+	}
+	&::before { margin-right: .3em; }
+	&::after { margin-left: .3em; }
+}

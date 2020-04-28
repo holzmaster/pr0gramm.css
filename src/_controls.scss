@@ -1,0 +1,248 @@
+::placeholder {
+    color: $placeholder-color;
+}
+
+button, input, textarea {
+	font-family: sans-serif;
+
+	background-color: $input-background;
+	color: $input-color;
+
+	border: 0;
+	border-radius: 0;
+
+	padding: 5px;
+
+	appearance: none;
+	outline: none;
+
+	&:disabled {
+		background-color: $placeholder-color !important;
+		color: $text-muted !important;
+		cursor: default;
+	}
+
+	&:focus, &:focus-within {
+		background-color: $input-focused-background;
+		color: $input-focused-color;
+	}
+
+	// https://github.com/necolas/normalize.css/issues/393#issue-52309010
+	&::-moz-focus-inner { border: 0; }
+}
+
+textarea {
+	width: 100%;
+
+	margin-bottom: 12px;
+
+	&:invalid {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+button,
+input[type=button],
+input[type=submit] {
+	$lage-button-width: 300px;
+
+	background-color: var(--primary-color);
+
+	padding: 8px 8px 6px 8px;
+	margin: 0;
+
+	color: $input-focused-color;
+	text-align: center;
+
+	cursor: pointer;
+	font-size: 12px;
+
+	&.large {
+		margin: 32px 0 0 0;
+		width: $lage-button-width;
+		padding: 12px;
+		font-size: 16px;
+	}
+
+	&.secondary {
+		background-color: $input-focused-background;
+		color: $text-muted;
+	}
+
+	&:hover, &:focus {
+		outline: none;
+		text-shadow: none;
+		color: #555;
+		background-color: $input-focused-color;
+	}
+}
+
+// This style was entirely copied from the original pr0gramm.min.css
+input[type=range] {
+	background-color: transparent;
+	-webkit-appearance: none;
+	appearance: none;
+	// width: 100%;
+
+	&:focus {
+		outline: none;
+
+		&::-webkit-slider-runnable-track {
+			background: #ffffff;
+		}
+	}
+
+	&::-moz-range-thumb {
+		cursor: pointer;
+
+		width: 3px;
+		height: 14px;
+
+		box-shadow: none;
+		border: none;
+		border-radius: 7px;
+
+		background: #fff;
+	}
+
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		cursor: pointer;
+
+		width: 3px;
+		height: 14px;
+		margin-top: -6px;
+
+		box-shadow: none;
+		border: none;
+		border-radius: 7px;
+
+		background: #fff;
+	}
+
+	&::-moz-range-track {
+		cursor: pointer;
+
+		width: 100%;
+		height: 2px;
+
+		box-shadow: none;
+		border: none;
+		border-radius: 0px;
+
+		background: #fff;
+	}
+	&::-webkit-slider-runnable-track {
+		cursor: pointer;
+
+		width: 100%;
+		height: 2px;
+
+		box-shadow: none;
+		border: none;
+		border-radius: 0px;
+
+		background: #fff;
+	}
+}
+
+label {
+	cursor: pointer;
+
+	$radio-size: 11px;
+
+	& > input[type="checkbox"], // Checkboxes use the same style as radio buttons. This is not good UX.
+	& > input[type="radio"] {
+		display: none;
+	}
+	& > input[type="checkbox"] + span, // Checkboxes use the same style as radio buttons. This is not good UX.
+	& > input[type="radio"] + span {
+		position: relative;
+		padding-left: $radio-size + 7px;
+		margin: 4px 4px;
+	}
+	& > input[type="checkbox"] + span::before, // Checkboxes use the same style as radio buttons. This is not good UX.
+	& > input[type="radio"] + span::before {
+		content: "";
+
+		width: $radio-size;
+		height: $radio-size;
+
+		position: absolute;
+		top: 2px;
+		left: 0;
+
+		display: inline-block;
+
+		background-color: transparent;
+		border: 1px solid $input-focused-color;
+	}
+	& > input[type="checkbox"]:checked + span::before, // Checkboxes use the same style as radio buttons. This is not good UX.
+	& > input[type="radio"]:checked + span::before {
+		background-color: $input-focused-color;
+	}
+}
+
+hr {
+	border: none;
+	border-top: 1px solid $divider-color;
+}
+
+code {
+	padding: 16px;
+	display: block;
+	background-color: $code-background-color;
+}
+
+
+details {
+	$summary-icon-width: 18px;
+	$summary-icon-margin: 6px;
+
+	padding-left: $summary-icon-width + $summary-icon-margin;
+
+	summary {
+		margin-left: -($summary-icon-width + $summary-icon-margin);
+
+		cursor: pointer;
+
+		// Hide default arrow because we want our own
+		list-style-type: none; // Firefox
+		&::-webkit-details-marker { display: none; } // Chrome
+		&::marker { display: none; }
+	}
+
+	& summary::before {
+		color: var(--primary-color);
+
+		display: inline-block;
+		width: $summary-icon-width;
+		margin-right: $summary-icon-margin;
+
+		text-align: center;
+
+		content: "[+]";
+	}
+	&[open] {
+
+		summary::before {
+			content: "[-]";
+		}
+
+		summary ~ * {
+			animation: open .25s ease;
+		}
+	}
+}
+
+@keyframes open {
+	0% {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

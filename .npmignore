@@ -1,0 +1,9 @@
+*.js
+*.scss
+*.html
+*.map
+.*ignore
+.github
+.editorconfig
+build
+src

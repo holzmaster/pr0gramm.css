@@ -1,0 +1,94 @@
+
+$richtiges-grau: #161618;
+$pr0gramm-primary: #ee4d2e;
+$pr0gramm-secondary: #fc8833;
+$link-color: #75c0c7;
+$cha0s-grau: #212121;
+$tag-background: #2a2e31;
+
+$placeholder-color: #666;
+
+$input-background: #1b1e1f;
+$input-color: #bbb;
+
+$input-focused-background: #212425;
+$input-focused-color: #f5f7f6;
+
+$divider-color: #252525;
+
+$text-primary: #f2f5f4;
+$text-muted: #888;
+
+$sfw: #5cb85c;
+$nsfw: #f0ad4e;
+$nsfl: #d9534f;
+
+$ordentliche-schrift: "Helvetica Neue", "Helvetica", "Bitstream Vera Sans", "DejaVu Sans", sans-serif; // KEIN Arial. :)
+
+$vs-dark-background-color: #1e1e1e; // Color not available on pr0gramm, but we need something darker for the code listings
+
+$code-background-color: $vs-dark-background-color;
+
+/*
+// Unused colors
+#f2f5f4 	Standard-Schriftfarbe 	#f2f5f4 	Formate
+#f7c516 	Gelb vom pr0mium-Post 	#f7c516 	Formate
+#222222 	pr0mium-Auswahlteile 	#222222 	Formate
+#ff0082 	Altes pr0gramm <3 	#ff0082 	Formate
+*/
+
+$mark-banned:#444;
+$mark-ftb: #6c432b;
+$mark-neuschwuchtel: #e108e9;
+$mark-schwuchtel: #fff;
+$mark-mittelaltschwuchtel: #addc8d;
+$mark-altschwuchtel: #5bb91c;
+$mark-spender: #1cb992;
+$mark-wichtel: $pr0gramm-primary;
+$mark-mod: #008fff;
+$mark-altmod: #7fc7ff;
+$mark-admin: #ff9900;
+$mark-system-bot: #ffc166;
+$mark-user-bot: #10366f;
+$mark-legende: #1cb992;
+$mark-helfer: #c52b2f;
+
+$marks: (
+	"0": $mark-schwuchtel,
+	"1": $mark-neuschwuchtel,
+	"2": $mark-altschwuchtel,
+	"3": $mark-admin,
+	"4": $mark-banned,
+	"5": $mark-mod,
+	"6": $mark-ftb,
+	"7": $mark-legende,
+	"8": $mark-wichtel,
+	"9": $mark-spender,
+	"10": $mark-mittelaltschwuchtel,
+	"11": $mark-altmod,
+	"12": $mark-helfer,
+	"13": $mark-user-bot,
+	"14": $mark-system-bot,
+);
+
+$special-shapes: (
+	"7": "\25C6", // Legende
+	"8": "\25A7", // Wichtel
+	"12": "\2764", // Helfer
+);
+
+$theme-primaries: (
+	"0": $pr0gramm-primary,
+	"1": #1db992,
+	"2": #bfbc06,
+	"3": $mark-mod,
+	"4": #ff0082,
+);
+
+$theme-secondaries: (
+	"0": $link-color,
+	"1": #1b9677,
+	"2": #b0ad05,
+	"3": #36a7ff,
+	"4": #f90081,
+);

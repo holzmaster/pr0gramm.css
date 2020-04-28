@@ -1,0 +1,30 @@
+
+.tag {
+	font-size: 12px;
+	background-color: $tag-background;
+
+	display: inline-block;
+	padding: 2px 10px;
+	margin: 0px 6px 6px 0;
+
+	border-radius: 10px;
+
+	color: $input-focused-color;
+
+	a {
+		color: $input-focused-color;
+
+		&[class|="vote"] {
+			padding: 0 2px;
+			color: $text-muted;
+
+			&:hover {
+				color: var(--primary-color)
+			}
+		}
+
+	}
+	a:hover, a:focus {
+		color: var(--secondary-color);
+	}
+}

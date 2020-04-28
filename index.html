@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="de">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="build/pr0gramm.css">
+<link rel="stylesheet" href="node_modules/highlightjs/styles/vs2015.css">
+<style>
+	/* Specific styles for this website */
+	body { width: 800px; margin: 0 auto; }
+
+	article { padding: 10px 0; }
+	article:first-of-type > h1 { text-align: center; font-size: 48px; margin-bottom: 10px; margin-top: 20px; }
+	article:first-of-type > h1 + div { text-align: center; color: #666; }
+	p { margin: 0 0 20px 0; }
+
+	footer {
+		color: #888;
+		background-color: #0a0a0b;
+		height: 56px;
+		line-height: 56px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.sample {
+		margin-bottom: 20px;
+		padding: 20px;
+		background-color: #0a0a0b;
+	}
+	code { white-space: pre; -moz-tab-size: 4; tab-size: 4; margin: 16px; }
+	details > code { margin-left: 0; margin-right: 0; }
+	.sample > label { display: block; } /* don't do this! I'm just too lazy for proper list styling below */
+
+	/* Site-specific use of navbar. */
+	.navbar > div {
+		width: 800px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+	.brand { font-weight: bold; text-transform: uppercase; }
+	.navbar > div > *:nth-last-child(2) { flex-grow: 1; }
+
+	.blur-demo {
+		display: grid;
+		grid-template-columns: repeat(10, 128px);
+		grid-gap: 1px;
+		justify-content: center;
+		align-content: start;
+	}
+	.blur-demo img { width: 128px; height: 128px; background-color: #0a0a0b; }
+	.user-mark-demo {
+		display: grid;
+		grid-template-rows: repeat(4, auto);
+		grid-gap: 0px 16px;
+		justify-content: center;
+		grid-auto-flow: column;
+	}
+</style>
+<title>pr0gramm.css</title>
+
+<!-- Beispiel für eine gefixte Navbar. Muss nicht fixed sein. -->
+<nav class="navbar fixed">
+
+	<!--
+		Diesen div benötigst du in Deiner Seite nicht.
+		Er wird hier nur verwendet, um das Innere der Navbar auf dieselbe horizontale Höhe wie den Inhalt zu bringen.
+		(siehe ".navbar > div" oben )
+	 -->
+	<div>
+		<a href="https://holzmaster.github.io/pr0gramm.css" class="brand nav-link active">pr0gramm.css</a>
+		<a href="//github.com/holzmaster/pr0gramm.css" class="nav-link">auf GitHub</a>
+		<span></span>
+		<a href="//pr0gramm.com/inbox/messages/holzmaster" class="nav-link">Kontakt</a>
+	</div>
+</nav>
+
+<!--
+	Die Navbar hat eine Standardhöhe. Wenn sie fixed ist, muss das Folgeelement verschoben werden.
+	Um das zu tun, einfach die Klasse "adjust-for-fixed-navbar" setzen.
+-->
+<main class="adjust-for-fixed-navbar">
+	<article>
+		<h1>pr0gramm.css</h1>
+		<div>
+			Ein Stylesheet für pr0gramm-esque Seiten.
+			<p>Hat bis auf das Aussehen nichts mit dem pr0gramm.min.css zu tun, das auf pr0gramm verwendet wird.
+		</div>
+
+		<p>Zuerst ein paar Schmuser.</p>
+
+		<!-- Die Schmuser sind nur dafür da, um den Blur-Effekt der Navbar zu demonstrieren. -->
+		<div class="blur-demo">
+			<img src="http://placekitten.com/128/128?image=1" alt="">
+			<img src="http://placekitten.com/128/128?image=2" alt="">
+			<img src="http://placekitten.com/128/128?image=3" alt="">
+			<img src="http://placekitten.com/128/128?image=4" alt="">
+			<img src="http://placekitten.com/128/128?image=5" alt="">
+			<img src="http://placekitten.com/128/128?image=6" alt="">
+			<img src="http://placekitten.com/128/128?image=7" alt="">
+			<img src="http://placekitten.com/128/128?image=8" alt="">
+			<img src="http://placekitten.com/128/128?image=9" alt="">
+			<img src="http://placekitten.com/128/128?image=10" alt="">
+			<img src="http://placekitten.com/128/128?image=11" alt="">
+			<img src="http://placekitten.com/128/128?image=12" alt="">
+			<img src="http://placekitten.com/128/128?image=13" alt="">
+			<img src="http://placekitten.com/128/128?image=14" alt="">
+			<img src="http://placekitten.com/128/128?image=15" alt="">
+			<img src="http://placekitten.com/128/128?image=16" alt="">
+			<img src="http://placekitten.com/128/128?image=4" alt="">
+			<img src="http://placekitten.com/128/128?image=1" alt="">
+			<img src="http://placekitten.com/128/128?image=12" alt="">
+			<img src="http://placekitten.com/128/128?image=3" alt="">
+		</div>
+	</article>
+
+	<article>
+		<h1>Verwendung / Installation</h1>
+
+		<code>{{bash;
+			npm install pr0gramm.css
+			# CSS liegt in node_modules/pr0gramm.css/pr0gramm.min.css
+			# import "pr0gramm.css"; // bei einem CSS-in-JS-Bundler (z. B. create-react-app)
+		}}</code>
+		<span class="separator">oder</span>
+		<code>{{html; <link rel="stylesheet" href="//unpkg.com/pr0gramm.css@^1/pr0gramm.min.css">}}</code>
+	</article>
+	<hr>
+	<article>
+		<h1>Standard-Styles für Controls</h1>
+
+		<div class="sample" id="controls">
+			<textarea placeholder="Kommentar schreiben…"></textarea>
+			<br>
+			<button>Ein Button</button>
+			<button class="secondary">Abbrechen</button>
+			<button disabled>Deaktiviert</button>
+			<br>
+			<br>
+			<input type="text" placeholder="Eine tolle Textbox">
+			<br>
+			<br>
+			<div>
+				<label>
+					<input type="radio" name="some-readio-button" value="0">
+					<span>Tolle</span>
+				</label>
+				<label>
+					<input type="radio" name="some-readio-button" value="1" checked>
+					<span>Radio-Buttons</span>
+				</label>
+			</div>
+			<br>
+			Hier ist noch ein Range-Slider:
+			<br>
+			<input type="range">
+			<br>
+			<details>
+				<summary>Hier klicken zum Ausklappen</summary>
+				<div>Wer das liest ist doof. Hihi</div>
+			</details>
+			<button class="large">Krass abspeichern</button>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>{{html;
+				<textarea placeholder="Kommentar schreiben…"></textarea>
+
+				<input type="text" placeholder="Eine tolle Textbox">
+
+				<button>Ein Button<button>
+				<button class="secondary">Abbrechen<button>
+				<button disabled>Deaktiviert<button>
+
+				<div>
+					<label>
+						<input type="radio" name="some-readio-button" value="0">
+						<!--
+							Ja, der span ist nötig. Dafür brauchst du kein for=""
+							...und musst keine ID vergeben.
+						-->
+						<span>Tolle</span>
+					</label>
+					<label>
+						<input type="radio" name="some-readio-button" value="1" checked>
+						<span>Radio-Buttons</span>
+					</label>
+				</div>
+
+				<!-- Range-Slider: -->
+				<input type="range">
+
+				<!-- details / summary -->
+				<details>
+					<summary>Hier klicken zum Ausklappen</summary>
+					<div>Wer das liest ist doof. Hihi</div>
+				</details>
+
+				<button class="large">Krass abspeichern</button>
+			}}</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Links</h1>
+
+		<div class="sample">
+			<a href="#">Ein Link</a>,
+			<a href="#" class="action">eine Aktion</a>,
+			<a href="#" class="action serious">mit Klammern</a>,
+			ein <a href="#" class="nav-link"> Navigationslink</a> und
+			ein <a href="#" class="nav-link active">aktiver Navigationslink</a>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>{{html;
+				<a href="#">Ein Link</a>,
+				<a href="#" class="action">eine Aktion</a>,
+				<a href="#" class="action serious">mit Klammern</a>,
+				ein <a href="#" class="nav-link"> Navigationslink</a> und
+				ein <a href="#" class="nav-link active">aktiver Navigationslink</a>
+			}}</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Nutzerränge</h1>
+
+		<div class="sample">
+			<div class="user-mark-demo">
+				<span class="user" data-mark="0">EinUser</span>
+				<span class="user" data-mark="1">IchBinNeuHier</span>
+				<span class="user" data-mark="2">Benutzer</span>
+				<span class="user" data-mark="3">cha0s</span>
+				<span class="user" data-mark="4">Blauschwuchtel</span>
+				<span class="user" data-mark="5">froschler</span>
+				<span class="user" data-mark="6">Marina</span>
+				<span class="user" data-mark="7">Keith</span>
+				<span class="user" data-mark="8">Wichtel</span>
+				<span class="user" data-mark="9">EdlerSpender</span>
+				<span class="user" data-mark="10">KeineAltschwuchtel</span>
+				<span class="user" data-mark="11">Seglormeister</span>
+				<span class="user" data-mark="12">RundesBalli</span>
+				<span class="user" data-mark="13">NutzerBot</span>
+				<span class="user" data-mark="14">SystemBot</span>
+			</div>
+
+			<p>Mit OP-Tag:<br>
+			<span class="user op" data-mark="2">holzmaster</span>
+			<p>Als Link: <a class="user" data-mark="3" href="//pr0gramm.com/user/Gamb">Gamb</a>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>{{html;
+
+				<span class="user" data-mark="0">EinUser</span>
+				<span class="user" data-mark="1">IchBinNeuHier</span>
+				<span class="user" data-mark="2">Benutzer</span>
+				<span class="user" data-mark="3">cha0s</span>
+				<span class="user" data-mark="4">Blauschwuchtel</span>
+				<span class="user" data-mark="5">froschler</span>
+				<span class="user" data-mark="6">Marina</span>
+				<span class="user" data-mark="7">Keith</span>
+				<span class="user" data-mark="8">Wichtel</span>
+				<span class="user" data-mark="9">EdlerSpender</span>
+				<span class="user" data-mark="10">KeineAltschwuchtel</span>
+				<span class="user" data-mark="11">Seglormeister</span>
+				<span class="user" data-mark="12">RundesBalli</span>
+				<span class="user" data-mark="13">NutzerBot</span>
+				<span class="user" data-mark="14">SystemBot</span>
+
+				<!-- alternativ kann auch die "pr0gramm-Notation" verwendet werden: -->
+				<span class="user um3">cha0s</span>
+
+				<!-- Mit OP-Tag: -->
+				<span class="user op" data-mark="2">holzmaster</span>
+				<!-- Als Link: -->
+				<a class="user" data-mark="3" href="//pr0gramm.com/user/Gamb">Gamb</a>
+			}}</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Tags</h1>
+
+		<div class="sample">
+			<span class="tag">gute nudel</span>
+			<span class="tag">Falsche Zielgruppe</span>
+			<span class="tag">
+				auch mit votes
+				<a href="#" class="vote-up">+</a>
+				<a href="#" class="vote-down">-</a>
+			</span>
+			<a href="#" class="tag">und mit Verlinkung</a>
+			<span class="tag">
+				<a href="#">mit votes und Verlinkung</a>
+				<a href="#" class="vote-up">+</a>
+				<a href="#" class="vote-down">-</a>
+			</span>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>{{html;
+				<span class="tag">gute nudel</span>
+				<span class="tag">Falsche Zielgruppe</span>
+
+				<span class="tag">
+					auch mit votes
+					<a href="#" class="vote-up">+</a>
+					<a href="#" class="vote-down">-</a>
+				</span>
+
+				<a href="#" class="tag">und mit Verlinkung</a>
+
+				<span class="tag">
+					<a href="#">mit votes und Verlinkung</a>
+					<a href="#" class="vote-up">+</a>
+					<a href="#" class="vote-down">-</a>
+				</span>
+			}}</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Navbar</h1>
+
+		<div class="sample">
+			<h3>Siehe diese Seite</h3>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code><kbd>Strg+U</kbd></code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h2>Farbschema Ändern</h2>
+		<div class="sample">
+			<label>
+				<input type="radio" name="theme" value="0" checked>
+				<!-- Ja, der span ist nötig. Dafür brauchst du kein for="" -->
+				<span>bewährtes Orange</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="1">
+				<span>angenehmes Grün</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="2">
+				<span>Olivgrün des Friedens</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="3">
+				<span>episches Blau</span>
+			</label>
+			<label>
+				<input type="radio" name="theme" value="4">
+				<span>altes Pink</span>
+			</label>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>{{css;
+				/*
+				* 0: bewährtes Orange
+				* 1: angenehmes Grün
+				* 2: Olivgrün des Friedens
+				* 3: episches Blau
+				* 4: altes Pink
+				*/
+				:root {
+					--primary-color: var(--theme-color-primary-0);
+					--secondary-color: var(--theme-color-secondary-0);
+				}
+			}}</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Separator</h1>
+
+		<div class="sample">
+			Das hier ist ein ganz toller Text. Vielleicht gibt es hier sogar Controls. Wer weiß!
+			<span class="separator">oder</span>
+			Vielleicht möchtest du ja auch das tun, was unter diesem tollen "oder"-Teiler steht.
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>{{html;
+
+				Inhalt über dem Teiler
+				<span class="separator">oder</span>
+				Inhalt unter dem Teiler
+
+			}}</code>
+		</details>
+	</article>
+	<hr>
+	<article>
+		<h1>Komponente: Plus/Minus</h1>
+
+		<div class="sample">
+			<p>
+				Statische plus/minus:<br>
+				<i class="vote plus"></i>
+				<i class="vote minus"></i>
+			<p>
+				Interaktiv (mit hover):<br>
+				<i class="vote plus interactive"></i>
+				<i class="vote minus interactive"></i>
+			<p>
+				Mit a- oder button-Tag und anderer Größe:<br>
+				<a class="vote plus interactive" href="#gib-blussi" style="width: 50px; height: 50px;"></a>
+				<button class="vote minus interactive" style="width: 50px; height: 50px;"></button>
+		</div>
+
+		<details>
+			<summary>Code Anzeigen</summary>
+			<code>{{html;
+				<!-- Statische plus/minus -->
+				<i class="vote plus"></i>
+				<i class="vote minus"></i>
+
+				<!-- Interaktiv (mit hover) -->
+				<i class="vote plus interactive"></i>
+				<i class="vote minus interactive"></i>
+
+				<!-- Als a- oder button-Tag: -->
+				<a class="vote plus interactive" href="#gib-blussi" style="width: 50px; height: 50px;"></a>
+				<button class="vote minus interactive" style="width: 50px; height: 50px;"></button>
+				<!--
+					Du solltest bei Dir natürlich die Größe ordentlich setzen.
+					"width" und "height" müssen immer gleich sein,
+					sonst kommt es zu merkwürdigen Effekten.
+				-->
+			}}</code>
+		</details>
+	</article>
+
+	<article>
+		<h1>CSS-Variablen</h1>
+		<p>
+			Die aktuelle Primärfarbe (<span style="color: var(--primary-color)">diese hier</span>)
+			und die Linkfarbe (<span style="color: var(--secondary-color)">diese hier</span>)
+			sind über CSS-Variablen verfügbar.
+			Dies gilt auch für das richtige Grau und die passenden Schriftarten.
+
+		<code>{{css;
+		.rule {
+			color: var(--primary-color); /* Primärarbe des aktuellen Themes */
+			color: var(--secondary-color); /* Linkfarbe */
+			background-color: var(--pr0gramm-background-color); /* richtiges Grau */
+			font-family: var(--pr0gramm-font-family); /* passende Schriftart */
+		}
+		}}</code>
+
+		<div class="sample">
+			<p>
+				Statische plus/minus:<br>
+				<i class="vote plus"></i>
+				<i class="vote minus"></i>
+			<p>
+				Interaktiv (mit hover):<br>
+				<i class="vote plus interactive"></i>
+				<i class="vote minus interactive"></i>
+			<p>
+				Mit a- oder button-Tag und anderer Größe:<br>
+				<a class="vote plus interactive" href="#gib-blussi" style="width: 50px; height: 50px;"></a>
+				<button class="vote minus interactive" style="width: 50px; height: 50px;"></button>
+		</div>
+	</article>
+
+</main>
+
+<footer>Gemacht mit viel <span style="color: red;">❤</span></footer>
+
+<script>
+	const root = document.documentElement;
+
+	const themeSelectors = document.querySelectorAll("input[type='radio'][name='theme']");
+	for (const r of themeSelectors)
+		r.addEventListener("change", (e) => setTheme(e.target.value));
+
+	function setTheme(themeId) {
+		root.style.setProperty("--primary-color", `var(--theme-color-primary-${themeId})`);
+		root.style.setProperty("--secondary-color", `var(--theme-color-secondary-${themeId})`);
+	}
+</script>

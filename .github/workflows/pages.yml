@@ -1,0 +1,72 @@
+name: Pages
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js 13.2
+      uses: actions/setup-node@v1
+      with:
+        node-version: 13.2
+
+    - name: npm install, build, and test
+      run: |
+        npm ci
+        npm run build-docs
+
+      env:
+        CI: true
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@latest
+      if: startsWith(github.ref, 'refs/tags/v')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload minified CSS
+      uses: actions/upload-release-asset@v1
+      if: startsWith(github.ref, 'refs/tags/v')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/pr0gramm.min.css
+        asset_name: pr0gramm.min.css
+        asset_content_type: text/css
+
+    - name: Upload CSS
+      uses: actions/upload-release-asset@v1
+      if: startsWith(github.ref, 'refs/tags/v')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/pr0gramm.css
+        asset_name: pr0gramm.css
+        asset_content_type: text/css
+
+    - name: Publish Package
+      if: startsWith(github.ref, 'refs/tags/v')
+      run: |
+        npm ci
+        npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

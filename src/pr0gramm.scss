@@ -1,0 +1,37 @@
+@import "_constants";
+@import "_controls";
+@import "_link";
+@import "components/_navbar";
+@import "components/_separator";
+@import "components/_vote";
+@import "components/_tag";
+@import "components/_user";
+
+:root {
+	// Keep this as a CSS variable to be able to change it via JS
+	--primary-color: #{$pr0gramm-primary};
+	--secondary-color: #{$link-color};
+	--pr0gramm-background-color: #{$richtiges-grau};
+	--pr0gramm-font-family: #{$ordentliche-schrift};
+
+	@each $theme-key, $theme-color in $theme-primaries {
+		--theme-color-primary-#{$theme-key}: #{$theme-color};
+	}
+	@each $theme-key, $theme-color in $theme-secondaries {
+		--theme-color-secondary-#{$theme-key}: #{$theme-color};
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--pr0gramm-font-family);
+
+	background-color: var(--pr0gramm-background-color);
+	color: $text-primary;
+
+	line-height: 1.3;
+	font-size: 14px;
+}
