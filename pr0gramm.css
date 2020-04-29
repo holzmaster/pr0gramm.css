@@ -236,6 +236,7 @@ a.user:hover, a.user.active {
 .navbar {
   height: 52px;
   z-index: 100;
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 0 16px;
 }
 .navbar.fixed {
@@ -251,7 +252,7 @@ a.user:hover, a.user.active {
 
 @supports (backdrop-filter: blur()) {
   .navbar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(30px);
   }
 }
