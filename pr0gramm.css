@@ -479,6 +479,8 @@ a.user:hover, a.user.active {
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: var(--pr0gramm-font-family);
   background-color: var(--pr0gramm-background-color);
   color: #f2f5f4;
