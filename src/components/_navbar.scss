@@ -1,11 +1,14 @@
 $navbar-height: 52px;
 $backdrop-blur: 30px;
-$backdrop-color: rgba(0, 0, 0, 0.5);
-$nav-shadow-color: $backdrop-color;
+$backdrop-color: rgba(0, 0, 0, 0.4);
+$nav-shadow-color: rgba(0, 0, 0, 0.5);
+$nav-fallback-background-color: rgba(0, 0, 0, 0.9);
 
 .navbar {
 	height: $navbar-height;
 	z-index: 100;
+
+	background-color: $nav-fallback-background-color;
 
 	&.fixed {
 		margin: 0 auto;
