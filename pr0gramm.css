@@ -257,7 +257,7 @@ a.user:hover, a.user.active {
   }
 }
 @media only screen and (min-width: 600px) {
-  .navbar {
+  .navbar.with-shadow {
     box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 20px -10px;
   }
 }
