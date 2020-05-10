@@ -2,7 +2,7 @@
     color: $placeholder-color;
 }
 
-button, input, textarea {
+button, input, textarea, .button {
 	font-family: sans-serif;
 
 	background-color: $input-background;
@@ -43,6 +43,7 @@ textarea {
 }
 
 button,
+.button,
 input[type=button],
 input[type=submit] {
 	$lage-button-width: 300px;
@@ -76,6 +77,11 @@ input[type=submit] {
 		color: #555;
 		background-color: $input-focused-color;
 	}
+}
+
+.button {
+	display: inline-block;
+	line-height: normal;
 }
 
 // This style was entirely copied from the original pr0gramm.min.css
