@@ -10,7 +10,7 @@
   color: #666;
 }
 
-button, input, textarea {
+button, input, textarea, .button {
   font-family: sans-serif;
   background-color: #1b1e1f;
   color: #bbb;
@@ -20,16 +20,16 @@ button, input, textarea {
   appearance: none;
   outline: none;
 }
-button:disabled, input:disabled, textarea:disabled {
+button:disabled, input:disabled, textarea:disabled, .button:disabled {
   background-color: #666 !important;
   color: #888 !important;
   cursor: default;
 }
-button:focus, button:focus-within, input:focus, input:focus-within, textarea:focus, textarea:focus-within {
+button:focus, button:focus-within, input:focus, input:focus-within, textarea:focus, textarea:focus-within, .button:focus, .button:focus-within {
   background-color: #212425;
   color: #f5f7f6;
 }
-button::-moz-focus-inner, input::-moz-focus-inner, textarea::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner, textarea::-moz-focus-inner, .button::-moz-focus-inner {
   border: 0;
 }
 
@@ -43,6 +43,7 @@ textarea:invalid {
 }
 
 button,
+.button,
 input[type=button],
 input[type=submit] {
   background-color: var(--primary-color);
@@ -54,6 +55,7 @@ input[type=submit] {
   font-size: 12px;
 }
 button.large,
+.button.large,
 input[type=button].large,
 input[type=submit].large {
   margin: 32px 0 0 0;
@@ -62,12 +64,15 @@ input[type=submit].large {
   font-size: 16px;
 }
 button.secondary,
+.button.secondary,
 input[type=button].secondary,
 input[type=submit].secondary {
   background-color: #212425;
   color: #888;
 }
 button:hover, button:focus,
+.button:hover,
+.button:focus,
 input[type=button]:hover,
 input[type=button]:focus,
 input[type=submit]:hover,
@@ -76,6 +81,11 @@ input[type=submit]:focus {
   text-shadow: none;
   color: #555;
   background-color: #f5f7f6;
+}
+
+.button {
+  display: inline-block;
+  line-height: normal;
 }
 
 input[type=range] {
