@@ -20,7 +20,7 @@ console.log("Highlighting code...");
 const demoPattern = /\{\{(.+?);\n*(.+?)\n*\}\}/gis;
 
 const withDemoCode = correctedCss.replace(demoPattern, (_, language, codeToHighlight) => {
-	const normalizedCode = outdent.string(codeToHighlight).trim();
+	const normalizedCode = outdent.string("\n" + codeToHighlight).trim();
 	return hljs.highlight(language, normalizedCode).value;
 });
 
