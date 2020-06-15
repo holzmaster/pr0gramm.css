@@ -260,7 +260,7 @@ a.user:hover, a.user.active {
 }
 
 @supports (backdrop-filter: blur()) {
-  .navbar {
+  .navbar.navbar-blur {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(30px);
   }

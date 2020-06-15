@@ -61,12 +61,13 @@
 <title>pr0gramm.css</title>
 
 <!--
-     Beispiel für eine gefixte Navbar. Muss nicht fixed sein.
-     Die "with-shadow"-Klasse fügt den Drop-Shadow hinzu.
-     Der sieht manchmal auf dunklen untergründen nicht gut aus. Deshalb ist er opt-in.
-     Eignet sich gut für Seiten mit hellem Hintergrund/Bildern.
+	Beispiel für eine gefixte Navbar. Muss nicht fixed sein.
+	Die "with-shadow"-Klasse fügt den Drop-Shadow hinzu.
+	Der sieht manchmal auf dunklen untergründen nicht gut aus. Deshalb ist er opt-in.
+	Eignet sich gut für Seiten mit hellem Hintergrund/Bildern.
+	Gleiches gilt für "navbar-blur" für den Blur.
 -->
-<nav class="navbar fixed with-shadow">
+<nav class="navbar fixed with-shadow navbar-blur">
 
 	<!--
 		Diesen div benötigst du in Deiner Seite nicht.
@@ -364,15 +365,16 @@ ein <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hlj
 		<details>
 			<summary>Code Anzeigen</summary>
 			<code><span class="hljs-comment">/*
-* 0: bewährtes Orange
-* 1: angenehmes Grün
-* 2: Olivgrün des Friedens
-* 3: episches Blau
-* 4: altes Pink
-*/</span>
-<span class="hljs-selector-tag">root</span> {
-<span class="hljs-attribute">--primary-color</span>: <span class="hljs-built_in">var</span>(--theme-color-primary-0);
-<span class="hljs-attribute">--secondary-color</span>: <span class="hljs-built_in">var</span>(--theme-color-secondary-0);</code>
+ * 0: bewährtes Orange
+ * 1: angenehmes Grün
+ * 2: Olivgrün des Friedens
+ * 3: episches Blau
+ * 4: altes Pink
+ */</span>
+<span class="hljs-selector-pseudo">:root</span> {
+	<span class="hljs-attribute">--primary-color</span>: <span class="hljs-built_in">var</span>(--theme-color-primary-0);
+	<span class="hljs-attribute">--secondary-color</span>: <span class="hljs-built_in">var</span>(--theme-color-secondary-0);
+}</code>
 		</details>
 	</article>
 	<hr>
@@ -440,10 +442,12 @@ Inhalt unter dem Teiler</code>
 			sind über CSS-Variablen verfügbar.
 			Dies gilt auch für das richtige Grau und die passenden Schriftarten.
 
-		<code><span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">var</span>(<span class="hljs-selector-tag">--primary-color</span>); <span class="hljs-comment">/* Primärarbe des aktuellen Themes */</span>
-<span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">var</span>(<span class="hljs-selector-tag">--secondary-color</span>); <span class="hljs-comment">/* Linkfarbe */</span>
-<span class="hljs-selector-tag">background-color</span>: <span class="hljs-selector-tag">var</span>(<span class="hljs-selector-tag">--pr0gramm-background-color</span>); <span class="hljs-comment">/* richtiges Grau */</span>
-<span class="hljs-selector-tag">font-family</span>: <span class="hljs-selector-tag">var</span>(<span class="hljs-selector-tag">--pr0gramm-font-family</span>); <span class="hljs-comment">/* passende Schriftart */</span></code>
+		<code><span class="hljs-selector-tag">element</span> {
+	<span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--primary-color); <span class="hljs-comment">/* Primärarbe des aktuellen Themes */</span>
+	<span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--secondary-color); <span class="hljs-comment">/* Linkfarbe */</span>
+	<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--pr0gramm-background-color); <span class="hljs-comment">/* richtiges Grau */</span>
+	<span class="hljs-attribute">font-family</span>: <span class="hljs-built_in">var</span>(--pr0gramm-font-family); <span class="hljs-comment">/* passende Schriftart */</span>
+}</code>
 	</article>
 
 </main>
