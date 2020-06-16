@@ -213,32 +213,32 @@ details[open] summary ~ * {
     transform: translateX(0);
   }
 }
-a {
+a, .link {
   color: var(--secondary-color);
   text-decoration: none;
 }
-a.action {
+a.action, .link.action {
   color: var(--primary-color);
 }
-a.action.serious::before {
+a.action.serious::before, .link.action.serious::before {
   content: "[";
   color: #666;
 }
-a.action.serious::after {
+a.action.serious::after, .link.action.serious::after {
   content: "]";
   color: #666;
 }
-a:hover {
+a:hover, .link:hover {
   cursor: pointer;
   color: #f5f7f6;
 }
-a.nav-link {
+a.nav-link, .link.nav-link {
   color: #fff;
 }
-a.nav-link:hover, a.nav-link.active {
+a.nav-link:hover, a.nav-link.active, .link.nav-link:hover, .link.nav-link.active {
   color: var(--primary-color);
 }
-a.user:hover, a.user.active {
+a.user:hover, a.user.active, .link.user:hover, .link.user.active {
   color: var(--secondary-color);
 }
 
