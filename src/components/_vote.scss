@@ -17,19 +17,19 @@
 		background: var(--primary-color);
 	}
 
+	-webkit-mask-size: contain;
+	mask-size: contain;
+
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+
 	&.plus {
 		-webkit-mask: var(--plus-image);
 		mask: var(--plus-image);
-
-		-webkit-mask-size: contain;
-		mask-size: contain;
 	}
 
 	&.minus {
 		-webkit-mask: var(--minus-image);
 		mask: var(--minus-image);
-
-		-webkit-mask-size: contain;
-		mask-size: contain;
 	}
 }
