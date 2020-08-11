@@ -408,6 +408,9 @@ a.user:hover, a.user.active, .link.user:hover, .link.user.active {
 .user[data-mark][data-mark="14"]::after {
   color: #ffc166;
 }
+.user[data-mark][data-mark="15"]::after {
+  color: #ea9fa1;
+}
 .user[class*=um] {
   color: #f5f7f6;
 }
@@ -462,6 +465,9 @@ a.user:hover, a.user.active, .link.user:hover, .link.user.active {
 }
 .user.um14::after {
   color: #ffc166;
+}
+.user.um15::after {
+  color: #ea9fa1;
 }
 
 :root {
