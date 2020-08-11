@@ -52,6 +52,7 @@ $mark-system-bot: #ffc166;
 $mark-user-bot: #10366f;
 $mark-legende: #1cb992;
 $mark-helfer: #c52b2f;
+$mark-alt-helfer: #ea9fa1;
 
 $marks: (
 	"0": $mark-schwuchtel,
@@ -69,6 +70,7 @@ $marks: (
 	"12": $mark-helfer,
 	"13": $mark-user-bot,
 	"14": $mark-system-bot,
+	"15": $mark-alt-helfer,
 );
 
 $special-shapes: (
