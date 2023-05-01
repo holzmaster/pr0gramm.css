@@ -27,7 +27,7 @@
     "highlightjs": "^9.16.2",
     "mkdirp": "^2.1.1",
     "outdent": "^0.8.0",
-    "rimraf": "^4.1.0",
+    "rimraf": "^5.0.0",
     "sass": "^1.57.1"
   }
 }
